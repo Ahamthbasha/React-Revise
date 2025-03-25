@@ -1,28 +1,51 @@
 import React,{useState} from 'react'
-import Basic from './Component1/Basic'
-import Parent from './Component2/Parent'
-import MyntraParent from './Component2/MyntraParent'
-import MyntraHeader from './Component3/MyntraHeader'
-import offers from './utils/DummyData'
-import MyntraCard from './Component3/MyntraCard'
-import MyntreFooter from './Component3/MyntreFooter'
-import Counter from './Component4/Counter'
+// import Basic from './Component1/Basic'
+// import Parent from './Component2/Parent'
+// import MyntraParent from './Component2/MyntraParent'
+// import MyntraHeader from './Component3/MyntraHeader'
+// import offers from './utils/DummyData'
+// import MyntraCard from './Component3/MyntraCard'
+// import MyntreFooter from './Component3/MyntreFooter'
+// // import Counter from './Component4/Counter'
+// import Header from './Component5/Header'
+// import Card from './Component5/Card'
+// import Password from './Component6/Password'
+
+// import Counter from './Component7/Counter'
+// import Count from './Component7/Count'
+// import Fibonocci from './Component7/Fibonocci'
+// import Stopwatch from './Component7/Stopwatch'
+// import Count1 from './Component8/count1'
+// import Example1 from './Component9/Example1'
+// import Demo from './Component9/demo'
+
+
+import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'
+import Hi from './Component10/Hi'
+import Hello from './Component10/Hello'
+import Home from './Component10/Home'
+import Contact from './Component10/Contact'
+import Details from './Component10/Details'
+import Product from './Component10/Product'
+import Header from './Component11/Header'
+import Card from './Component11/Card'
+
 const App = () => {
 
-  const [sorting,setSorting] = useState(offers)
-  const order=()=>{
-    sorting.sort((a,b)=>a.price-b.price)
-    setSorting([...sorting])
-  }
+  // const [sorting,setSorting] = useState(offers)
+  // const order=()=>{
+  //   sorting.sort((a,b)=>a.price-b.price)
+  //   setSorting([...sorting])
+  // }
 
-  const price500=()=>{
-    const fiveHundred=sorting.filter((val)=>{
-      return val.price > 500
-    })
-    console.log(fiveHundred)
+  // const price500=()=>{
+  //   const fiveHundred=sorting.filter((val)=>{
+  //     return val.price > 500
+  //   })
+  //   console.log(fiveHundred)
 
-    setSorting(fiveHundred)
-  }
+  //   setSorting(fiveHundred)
+  // }
 
   return (
     <div>
@@ -46,7 +69,53 @@ const App = () => {
 
       <MyntreFooter /> */}
 
-      <Counter />
+      {/* <Counter /> */}
+
+      {/* <Header />
+      <Card /> */}
+
+      {/* password project */}
+
+      {/* <Password /> */}
+
+      {/* <Counter /> */}
+
+      {/* <Count /> */}
+
+      {/* <Fibonocci /> */}
+
+      {/* <Stopwatch /> */}
+
+      {/* <Count1 /> */}
+
+      {/* <Example1 /> */}
+
+      {/* <Demo/> */}
+{/* 
+      <BrowserRouter>
+
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/hello">Hello</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/hello" element={<Hello />}></Route>
+
+        <Route path='/details' element={<Details/>}>
+        <Route index element={<Hi />}></Route>
+        <Route path="contact" element={<Contact/>}></Route>
+        <Route path="product" element={<Product/>}></Route>
+        </Route>
+
+
+      </Routes>
+      
+      </BrowserRouter> */}
+
+      <Header/>
+      <Card />
     </div>
   )
 }
