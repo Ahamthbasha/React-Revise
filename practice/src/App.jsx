@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+// import React,{useState} from 'react'
 // import Basic from './Component1/Basic'
 // import Parent from './Component2/Parent'
 // import MyntraParent from './Component2/MyntraParent'
@@ -20,17 +20,18 @@ import React,{useState} from 'react'
 // import Demo from './Component9/demo'
 
 
-import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'
-import Hi from './Component10/Hi'
-import Hello from './Component10/Hello'
-import Home from './Component10/Home'
-import Contact from './Component10/Contact'
-import Details from './Component10/Details'
-import Product from './Component10/Product'
-import Header from './Component11/Header'
-import Card from './Component11/Card'
+// import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'
+// import Hi from './Component10/Hi'
+// import Hello from './Component10/Hello'
+// import Home from './Component10/Home'
+// import Contact from './Component10/Contact'
+// import Details from './Component10/Details'
+// import Product from './Component10/Product'
+// import Header from './Component11/Header'
+// import Card from './Component11/Card'
+// import Reducer from './Component12/Reducer'
 
-const App = () => {
+// const App = () => {
 
   // const [sorting,setSorting] = useState(offers)
   // const order=()=>{
@@ -47,8 +48,8 @@ const App = () => {
   //   setSorting(fiveHundred)
   // }
 
-  return (
-    <div>
+  // return (
+  //   <div>
       {/* <Basic /> */}
       {/* <Parent /> */}
 
@@ -114,11 +115,59 @@ const App = () => {
       
       </BrowserRouter> */}
 
-      <Header/>
-      <Card />
+      {/* <Header/>
+      <Card /> */}
+
+      {/* <Reducer />
+    </div>
+  )
+}
+
+export default App */}
+
+// import React from 'react'
+// import Context from './Component12/context'
+// import Checkbox from './Component12/Checkbox'
+// import Button from './Component12/Button'
+// const App = () => {
+//   return (
+//     <Context>
+//       <Checkbox />
+//       <Button />
+//     </Context>
+//   )
+// }
+
+// export default App
+
+// import React from 'react'
+// import Context from './Component12/Context'
+// import Checkbox from './Component12/Checkbox'
+// import Button from './Component12/Button'
+
+// const App = () => {
+//   return (
+//     <Context>
+//       <Checkbox />
+//       <Button/>
+//     </Context>
+//   )
+// }
+
+// export default App
+
+
+import React from 'react'
+import ToggleUntoggle from './Component12/ToggleUntoggle'
+import Counter from './Component12/Counter'
+
+const App = () => {
+  return (
+    <div>
+      {/* <ToggleUntoggle /> */}
+      <Counter/>
     </div>
   )
 }
 
 export default App
-

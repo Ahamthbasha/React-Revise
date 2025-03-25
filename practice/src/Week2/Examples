@@ -1,0 +1,56 @@
+// import React, { memo, useState } from 'react'
+
+// const ChildComponent=memo(({count})=>{
+//     console.log("child rendered")
+//     return(
+//         <h1>{count}</h1>
+//     )
+// })
+
+// const Counter = () => {
+//     const [count,setCount] = useState(0)
+//     const [text,setText] = useState("")
+
+//     console.log("parent")
+//   return (
+//     <div>
+//         <ChildComponent count={count}/>
+//         <button onClick={()=>setCount((count)=>count+1)}>Increment</button>
+
+//         <input type="text" value={text} onChange={(e)=>setText(e.target.value)} />
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+
+import React,{useState,useMemo} from 'react'
+
+const ExpensiveCalculation =({no})=>{
+    // console.log("rendering calci")
+
+    // const num = no*no 
+
+    const num=useMemo(()=>{
+        console.log("rendering calci")
+        return no*no
+    },[no])
+    return <h2>{num}</h2>
+}
+
+const Counter = () => {
+    const [text,setText] = useState("")
+    const [no,setNo] = useState(1)
+  return (
+    <div>
+
+      <ExpensiveCalculation no={no}/>
+      <button onClick={()=>setNo((no)=>no+1)}>Increment</button>
+
+      <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+    </div>
+  )
+}
+
+export default Counter
