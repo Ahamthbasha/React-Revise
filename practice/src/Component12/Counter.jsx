@@ -738,61 +738,342 @@
 
 // export default Counter
 
-import React, { useReducer } from 'react'
+// import React, { useReducer } from 'react'
 
-const reducer=(state,action)=>{
-    switch(action.type){
-        case "NEWTODO":
-            return {...state,newToDo:action.payload}
-        case "ADDTODO":
-            return {
-                ...state,
-                todo:[...state.todo,{id:Date.now(),text:action.payload,completed:false}],
-                newToDo:''
-            }
-        case "REMOVETODO":
-            return {
-                ...state,
-                todo:state.todo.filter((todo)=>{
-                    return todo.id!=action.payload
-                })
-            }
-        case "TOGGLETODO":
-            return {
-                ...state,
-                todo:state.todo.map((todo)=>(todo.id == action.payload ? {...todo,completed:!todo.completed}:todo))
-            }
-        default:
-            return state
-    }
-}
+// const reducer=(state,action)=>{
+//     switch(action.type){
+//         case "NEWTODO":
+//             return {...state,newToDo:action.payload}
+//         case "ADDTODO":
+//             return {
+//                 ...state,
+//                 todo:[...state.todo,{id:Date.now(),text:action.payload,completed:false}],
+//                 newToDo:''
+//             }
+//         case "REMOVETODO":
+//             return {
+//                 ...state,
+//                 todo:state.todo.filter((todo)=>{
+//                     return todo.id!=action.payload
+//                 })
+//             }
+//         case "TOGGLETODO":
+//             return {
+//                 ...state,
+//                 todo:state.todo.map((todo)=>(todo.id == action.payload ? {...todo,completed:!todo.completed}:todo))
+//             }
+//         default:
+//             return state
+//     }
+// }
+
+// const Counter = () => {
+//     const [state,dispatch] = useReducer(reducer,{
+//         todo:[],
+//         newToDo:''
+//     })
+//   return (
+//     <div>
+//       <h1>todo app</h1>
+//       <input type="text" placeholder='enter text' value={state.newToDo} onChange={(e)=>dispatch({type:"NEWTODO",payload:e.target.value})} />
+
+//       <button onClick={()=>dispatch({type:"ADDTODO",payload:state.newToDo})}>add</button>
+
+//       <ul>
+//         {
+//             state.todo.map((todo)=>{
+//                 return <li key={todo.id}
+//                 style={{ 
+//                     textDecoration: todo.completed ? "line-through" : "none", 
+//                     cursor: "pointer"
+//                 }}
+//                 onClick={()=>dispatch({type:"TOGGLETODO",payload:todo.id})}>{todo.text}
+//                 <button onClick={()=>dispatch({type:"REMOVETODO",payload:todo.id})}>Remove</button>
+//                 </li>
+//             })
+//         }
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+// import React, { useReducer } from 'react'
+
+// const reducer=(state,action)=>{
+//     switch(action.type){
+//         case "NEWTODO":
+//             return {...state,newTodo:action.payload}
+//         case "ADDTODO":
+//             return {
+//                 ...state,
+//                 todo:[...state.todo,{id:Date.now(),text:action.payload,completed:false}],
+//                 newTodo:''
+//             }
+//         case "REMOVETODO":
+//             return {
+//                 ...state,
+//                 todo:state.todo.filter((todo)=>todo.id != action.payload)
+//             }
+//         case "TOGGLETODO":
+//             return{
+//                 ...state,
+//                 todo:state.todo.map((todo)=>todo.id===action.payload ? {...todo,completed:!todo.completed} : todo)
+//             }
+//         default:
+//             return state
+//     }
+// }
+
+
+// const Counter = () => {
+
+//     const [state,dispatch] = useReducer(reducer,{
+//         todo:[],
+//         newTodo:''
+//     })
+
+//   return (
+//     <div>
+//       <input type="text" value={state.newTodo} onChange={(e)=>dispatch({type:"NEWTODO",payload:e.target.value})}/>
+
+//       <button onClick={()=>dispatch({type:"ADDTODO",payload:state.newTodo})}>Add</button>
+
+//       <ul>
+//         {
+//             state.todo.map((todo)=>{
+//                 return <li key={todo.id}
+                
+//                 onClick={()=>dispatch({type:"TOGGLETODO",payload:todo.id})}>
+//                     {todo.text}{todo.completed ? "(Completed)" : ""}
+//                 <button onClick={()=>dispatch({type:"REMOVETODO",payload:todo.id})}>Remove</button>
+//                 </li>
+//             })
+//         }
+//       </ul>
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+
+// import React, { memo, useCallback, useState } from 'react'
+
+
+// const IncrementButton=memo(({Increment})=>{
+//     console.log("child Component")
+//     return(
+//         <button onClick={Increment}>Increment</button>
+//     )
+// })
+
+// const Counter = () => {
+
+//     const [count,setCount] = useState(0)
+
+//     const Increment =useCallback(()=>{
+//         setCount((count)=>count+1)
+//     },[])
+//     console.log("Incement recreated")
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+//       <IncrementButton Increment={Increment}/>
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+// import React, { memo, useCallback, useState } from 'react'
+
+// const IncrementButton =memo(({Increment})=>{
+//     console.log("child component")
+//     return(
+//         <button onClick={Increment}>Increment</button>
+//     )
+// })
+
+// const Counter = () => {
+//     const [count,setCount] = useState(0)
+
+//     const Increment=useCallback(()=>{
+//         setCount((count)=>count+1)
+//     },[])
+
+//     console.log("parent component")
+//   return (
+//     <div>
+//     <h1>{count}</h1>
+//     <IncrementButton Increment={Increment}/>
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+// import React, { useState,useCallback } from 'react'
+
+// const Counter = () => {
+//     const [count,setCount] = useState(0)
+
+//     const Increment=useCallback(()=>{
+//         setCount((count)=>count+1)
+//     },[count])
+
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+//       <button onClick={Increment}>Increment</button>
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+
+// import React, { useCallback,useState,memo } from 'react'
+
+// const Button=memo(({onClick,children})=>{
+// console.log("button rendered",children)
+// return(
+//     <button onClick={onClick}>{children}</button>
+// )
+// })
+
+// const Counter = () => {
+    
+//     const [count,setCount] = useState(0)
+
+//     const Increment=useCallback(()=>{
+//         setCount((count)=>count+1)
+//     },[])
+
+//     const Decrement=useCallback(()=>{
+//         setCount((count)=>count-1)
+//     },[])
+
+//     const Reset=useCallback(()=>{
+//         setCount(0)
+//     },[])
+
+//   return (
+//     <div>
+//     <h1>{count}</h1> 
+//     <Button onClick={Increment}>Incremenet</Button>
+//     <Button onClick={Decrement}>Decremenet</Button>
+//     <Button onClick={Reset}>Reset</Button>
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+// import React,{useState,useCallback} from 'react'
+
+// const Counter = () => {
+//     const [data,setData] = useState(null)
+//     const [load,setLoad] = useState(false)
+//     const [error,setError] = useState('')
+//     const [count,setCount] = useState(1)
+
+//     const getData=useCallback((count)=>{
+//         async function getUserData(){
+//             try {
+//                 setLoad(true)
+//                 const response=await fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+//                 const data=await response.json()
+//                 setData(data)
+
+//             } catch (error) {
+//                 setError(error.message)
+//             }
+//             finally{
+//                 setLoad(false)
+//             }
+//         }
+//         getUserData()
+//     },[count])
+
+//     if(load){
+//         return <h1>Loading...</h1>
+//     }
+
+//     if(error){
+//         return <h1>{error}</h1>
+//     }
+
+//   return (
+//     <div>
+//       <button onClick={()=>getData(count)}>FetchData</button>
+//       <h1>{count}</h1>
+//       <button onClick={()=>setCount((count)=>count+1)}>Increment</button>
+//       {data && 
+//       <div>
+//       <h1>{data.userId}</h1>
+//       <h2>{data.id}</h2>
+//       <h3>{data.title}</h3>
+//       <h4>{data.completed}</h4>
+//       </div>
+//       }
+      
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+
+import React,{useCallback, useEffect, useState} from 'react'
 
 const Counter = () => {
-    const [state,dispatch] = useReducer(reducer,{
-        todo:[],
-        newToDo:''
-    })
+    const [data,setData] = useState(null)
+    const [load,setLoad] = useState(false)
+    const [error,setError] = useState('')
+    const [count,setCount] = useState(1)
+
+    const getData=useCallback(async ()=>{
+            try {
+                setLoad(true)
+                const response=await fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+                const data=await response.json()
+                setData(data)
+            } catch (error) {
+                setError(error.message)
+            }
+            finally{
+                setLoad(false)
+            }
+    },[count])
+
+    useEffect(()=>{
+    getData()
+    },[getData])
+
+    if(load){
+        return <h1>Loading...</h1>
+    }
+
+    if(error){
+        return <h1>{error}</h1>
+    }
+
   return (
     <div>
-      <h1>todo app</h1>
-      <input type="text" placeholder='enter text' value={state.newToDo} onChange={(e)=>dispatch({type:"NEWTODO",payload:e.target.value})} />
 
-      <button onClick={()=>dispatch({type:"ADDTODO",payload:state.newToDo})}>add</button>
-
-      <ul>
-        {
-            state.todo.map((todo)=>{
-                return <li key={todo.id}
-                style={{ 
-                    textDecoration: todo.completed ? "line-through" : "none", 
-                    cursor: "pointer"
-                }}
-                onClick={()=>dispatch({type:"TOGGLETODO",payload:todo.id})}>{todo.text}
-                <button onClick={()=>dispatch({type:"REMOVETODO",payload:todo.id})}>Remove</button>
-                </li>
-            })
-        }
-      </ul>
+        <button onClick={getData}>FetchData</button>
+        <button onClick={()=>setCount((count)=>count+1)}>Increment</button>
+      {
+        data &&
+        <div>
+        <h1>{data.userId}</h1>
+       <h2>{data.id}</h2>
+       <h3>{data.title}</h3>
+       <h4>{data.completed}</h4>
+        </div>
+      }
     </div>
   )
 }

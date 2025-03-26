@@ -157,15 +157,218 @@ export default App */}
 // export default App
 
 
+// import React from 'react'
+// import ToggleUntoggle from './Component12/ToggleUntoggle'
+// import Counter from './Component12/Counter'
+// import ContextProvider from './Context/ContextProvider'
+// import Heading from './Context/Heading' 
+// import UserContextProvider from './Context/UserContext'
+// import Profile from './Context/Profile'
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <ToggleUntoggle /> */}
+//       {/* <Counter/> */}
+
+//       {/* <ContextProvider>
+//         <Heading />
+//       </ContextProvider> */}
+
+//       <UserContextProvider>
+//         <Profile/>
+//       </UserContextProvider>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React from 'react'
+// import { UserContext } from './Context/UserContext'
+// import Profile from './Context/Profile'
+// import { AuthContext } from './Context/AuthContext'
+// import Login from './Context/Login'
+// import Logout from './Context/Logout'
+// import NavComponent from './Context/NavComponent'
+// import { BrowserRouter,Routes,Route } from 'react-router-dom'
+
+// const App = () => {
+//   return (
+//     // <UserContext>
+//     //   <Profile />
+//     // </UserContext>
+//     <div>
+
+//     <BrowserRouter>
+//     <Routes>
+//       <Route path='/login' element={<Login/>}></Route>
+//       <Route path='/logout' element={<Logout/>}></Route>
+//     </Routes>
+    
+//     </BrowserRouter>
+
+//     <AuthContext>
+//       <NavComponent />
+//     </AuthContext>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React from 'react';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import AuthContextProvider from './Context/AuthContext'; // ✅ Correct import
+// import Login from './Context/Login';
+// import Logout from './Context/Logout';
+// import NavComponent from './Context/NavComponent';
+
+// const App = () => {
+//     return (
+//         <AuthContextProvider> {/* ✅ Wrap everything inside AuthContextProvider */}
+//             <BrowserRouter>
+//                 <NavComponent /> {/* ✅ Navigation bar */}
+//                 <Routes>
+//                     <Route path="/login" element={<Login />} />
+//                     <Route path="/logout" element={<Logout />} />
+//                 </Routes>
+//             </BrowserRouter>
+//         </AuthContextProvider>
+//     );
+// };
+
+// export default App;
+
+// import React from 'react'
+// import {BrowserRouter,Routes,Route} from 'react-router-dom'
+// import AuthContextProvider from './Context/AuthContext'
+// import NavComponent from './Context/NavComponent'
+// import Login from './Context/Login'
+// import Logout from './Context/Logout'
+
+// const App = () => {
+//   return (
+//     <AuthContextProvider>
+//       <BrowserRouter>
+//       <NavComponent/>
+
+//       <Routes>
+//         <Route path="/login" element={<Login/>}></Route>
+//         <Route path="/logout" element={<Logout/>}></Route>
+//       </Routes>
+//       </BrowserRouter>
+      
+//     </AuthContextProvider>
+//   )
+// }
+
+// export default App
+
+
+// import React from 'react'
+// import ThemeContextProvider from './Context/ThemeContext'
+// import UsersContextProvider from './Context/UsersContext'
+// import Dashboard from './Context/Dashboard'
+
+// const App = () => {
+//   return (
+//     <ThemeContextProvider>
+//       <UsersContextProvider>
+//         <Dashboard />
+//       </UsersContextProvider>
+//     </ThemeContextProvider>
+//   )
+// }
+
+// export default App
+
+
+// import React from 'react'
+// import DataContextProvider from './Context/DataContext'
+// import Post from './Context/Post'
+
+// const App = () => {
+
+//   return (
+//     <DataContextProvider>
+//       <Post/>
+//     </DataContextProvider>
+//   )
+// }
+
+// export default App
+
+// import React from 'react'
+// import UserrContext from './Context/UserrContext'
+// import UserrContextProvider from './Context/UserrContext'
+// import UseData from './Context/UseData'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <UserrContextProvider>
+//         <UseData />
+//       </UserrContextProvider>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// import React from 'react'
+// import Reducer from './REDUCER/Reducer'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Reducer />
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+// import React, { lazy, Suspense } from 'react'
+// const LazyComponent=lazy(()=> import ('./REDUCER/Reducer'))
+// const App = () => {
+//   return (
+//     <Suspense fallback={<h1>Loading...</h1>}>
+//       <LazyComponent />
+//     </Suspense>
+//   )
+// }
+
+// export default App
+
+
+
+// import React from 'react'
+// import ContextCreatedProvider from './CONTEXTEXAMPLE/ContextCreated'
+// import ShowData from './CONTEXTEXAMPLE/ShowData'
+
+// const App = () => {
+//   return (
+//     <ContextCreatedProvider>
+//       <ShowData />
+//     </ContextCreatedProvider>
+//   )
+// }
+
+// export default App
+
+
 import React from 'react'
-import ToggleUntoggle from './Component12/ToggleUntoggle'
-import Counter from './Component12/Counter'
+import Question from './CONTEXTEXAMPLE/Question'
 
 const App = () => {
   return (
     <div>
-      {/* <ToggleUntoggle /> */}
-      <Counter/>
+      <Question />
     </div>
   )
 }

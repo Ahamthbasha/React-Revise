@@ -25,30 +25,59 @@
 // export default Counter
 
 
-import React,{useState,useMemo} from 'react'
+// import React,{useState,useMemo} from 'react'
 
-const ExpensiveCalculation =({no})=>{
-    // console.log("rendering calci")
+// const ExpensiveCalculation =({no})=>{
+//     // console.log("rendering calci")
 
-    // const num = no*no 
+//     // const num = no*no 
 
-    const num=useMemo(()=>{
-        console.log("rendering calci")
-        return no*no
-    },[no])
-    return <h2>{num}</h2>
-}
+//     const num=useMemo(()=>{
+//         console.log("rendering calci")
+//         return no*no
+//     },[no])
+//     return <h2>{num}</h2>
+// }
+
+// const Counter = () => {
+//     const [text,setText] = useState("")
+//     const [no,setNo] = useState(1)
+//   return (
+//     <div>
+
+//       <ExpensiveCalculation no={no}/>
+//       <button onClick={()=>setNo((no)=>no+1)}>Increment</button>
+
+//       <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+//     </div>
+//   )
+// }
+
+// export default Counter
+
+
+import React, { memo, useCallback, useState } from 'react'
+
+
+const IncrementButton=memo(({Increment})=>{
+    console.log("child Component")
+    return(
+        <button onClick={Increment}>Increment</button>
+    )
+})
 
 const Counter = () => {
-    const [text,setText] = useState("")
-    const [no,setNo] = useState(1)
+
+    const [count,setCount] = useState(0)
+
+    const Increment =useCallback(()=>{
+        setCount((count)=>count+1)
+    },[])
+    console.log("Incement recreated")
   return (
     <div>
-
-      <ExpensiveCalculation no={no}/>
-      <button onClick={()=>setNo((no)=>no+1)}>Increment</button>
-
-      <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+      <h1>{count}</h1>
+      <IncrementButton Increment={Increment}/>
     </div>
   )
 }
